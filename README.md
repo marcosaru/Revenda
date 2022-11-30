@@ -37,5 +37,5 @@ Modelo Conceitual:
 <img src="https://i.postimg.cc/TPf6wL0y/Conceitual.jpg" />
 
 Modelo Lógico do Banco de Dados:
-<img src="https://uploaddeimagens.com.br/imagens/kdkS3CA"/>
+<img src="https://i.postimg.cc/4d0qzm6Q/Logico.jpg"/>
 
