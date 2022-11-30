@@ -34,7 +34,7 @@ do seu histórico de compras ou venda.
 
 
 Modelo Conceitual: 
-<img src="https://uploaddeimagens.com.br/imagens/IhsTQJE" />
+<img src="https://i.postimg.cc/TPf6wL0y/Conceitual.jpg" />
 
 Modelo Lógico do Banco de Dados:
 <img src="https://uploaddeimagens.com.br/imagens/kdkS3CA"/>
