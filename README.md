@@ -39,3 +39,43 @@ Modelo Conceitual:
 Modelo Lógico do Banco de Dados:
 <img src="https://i.postimg.cc/4d0qzm6Q/Logico.jpg"/>
 
+
+
+Consultas especiais no banco:
+
+Dado um veiculo quantos foi gasto nele com peças
+
+SELECT rev.cod_veiculo, sum(rp.valor) as valor_total
+FROM revisao_peca as rp 
+inner join revisao as rev 
+on rp.id_revisao = rev.id_revisao
+inner join veiculo as v
+on rev.cod_veiculo = v.cod_veiculo
+group by rev.cod_veiculo
+
+Dado um vendedor quantas vendas ele fez e o valor total.
+
+SELECT ven.nome, ven.id_colaborador,v.marca, COUNT(*) as Quantidade,SUM(n.valor) as Total
+FROM colaborador as ven 
+inner join negocio as n 
+on n.id_colaborador = ven.id_colaborador 
+inner join veiculo as v 
+on n.cod_veiculo = v.cod_veiculo 
+where ven.id_colaborador = 1 AND n.tipo = 'Venda'
+group by ven.nome,ven.id_colaborador,v.marca
+
+Dado um colaborador verificar quantas compras ele fez no mês  que gerou custo valor total
+
+SELECT col.nome,v.marca,rev.id_revisao, SUM(rep.valor)
+from colaborador as col
+inner join negocio as n
+on col.id_colaborador = n.id_colaborador
+inner join veiculo as v
+on n.cod_veiculo = v.cod_veiculo
+inner join revisao as rev
+on rev.cod_veiculo = v.cod_veiculo
+inner join revisao_peca as rep
+on rep.id_revisao = rev.id_revisao
+where n.tipo = 'Compra' AND col.id_colaborador = 1 AND n.data_negocio between '2022-11-01' and
+'2022-11-30'
+group by col.nome,v.marca,rev.id_revisao/
